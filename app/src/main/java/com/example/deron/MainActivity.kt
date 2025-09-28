@@ -15,6 +15,8 @@ import com.example.deron.t7_Retrofit.RetrofitActivity
 import com.example.deron.t5_Room.RoomActivity
 import com.example.deron.t6_Coroutine.CoroutineActivity
 import com.example.deron.t8_Fragment.MyFragmentActivity
+import com.example.deron.t9_DialogFragment.DialogFragmentActivity
+import com.example.deron.t9_DialogFragment.MyDialogFragment
 
 class MainActivity : AppCompatActivity(), MainAdapter.Listener {
 
@@ -27,7 +29,8 @@ class MainActivity : AppCompatActivity(), MainAdapter.Listener {
         MainListModel(name = "Retrofit", RetrofitActivity::class.java),
         MainListModel(name = "Room", RoomActivity::class.java),
         MainListModel(name = "Coroutine", CoroutineActivity::class.java),
-        MainListModel(name = "Fragment", MyFragmentActivity::class.java)
+        MainListModel(name = "Fragment", MyFragmentActivity::class.java),
+        MainListModel(name = "Dialog Fragment", DialogFragmentActivity::class.java)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

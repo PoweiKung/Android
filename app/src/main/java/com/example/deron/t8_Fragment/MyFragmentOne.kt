@@ -6,19 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.activityViewModels
 import com.example.deron.databinding.FragmentOneBinding
-import com.example.deron.t8_Fragment.FragmentManager.startFragment
 
 class MyFragmentOne : Fragment() {
 
     lateinit var binding: FragmentOneBinding
-    lateinit var ac : MyFragmentActivity
+    private val ac: MyFragmentActivity by lazy { activity as MyFragmentActivity }
+    private val viewModel: MyFragmentViewModel by activityViewModels()
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        ac = activity as MyFragmentActivity
-    }
 
     /**
      *  Fragment 被建立，但還沒有 UI。
@@ -51,9 +47,17 @@ class MyFragmentOne : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tv.text = "Fragment One"
         binding.btn.setOnClickListener {
             ac.goToFragmentTwo()
+        }
+
+        binding.btnData.setOnClickListener {
+            viewModel.updateData()
+        }
+
+        // Fragment View 常常被銷毀重建 (EX:ViewPager)，如果 Owner 設定 this 可能導致喚起已經死掉的 view，因此這邊要綁 View
+        viewModel.data.observe(viewLifecycleOwner) { data ->
+            binding.tvData.text = data
         }
     }
 

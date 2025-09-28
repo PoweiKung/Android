@@ -14,7 +14,7 @@ import javax.inject.Inject
 class HiltMVVMViewModel @Inject constructor(
     private val repository: HiltMVVMRepository
 ) : ViewModel() {
-    private val _user = MutableLiveData<String>() // LiveData + set
+    private val _user = MutableLiveData("") // LiveData + set
     val user: LiveData<String> = _user // read only data
 
     fun uploadData() {

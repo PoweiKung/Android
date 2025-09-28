@@ -7,11 +7,32 @@
     tools:context=".t8_Fragment.MyFragmentOne">
 
     <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NULL"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_data"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_data"
+        app:layout_constraintTop_toTopOf="@id/btn_data" />
+
+    <Button
+        android:id="@+id/btn_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Get New Data"
+        app:layout_constraintLeft_toRightOf="@id/tv_data"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="TEST"
+        android:text="Fragment One"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/btn"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -26,5 +47,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

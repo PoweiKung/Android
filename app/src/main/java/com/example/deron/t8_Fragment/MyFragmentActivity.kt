@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.deron.databinding.ActivityFragmentBinding
 import com.example.deron.t8_Fragment.FragmentManager.startFragment
 import androidx.activity.addCallback
+import androidx.activity.viewModels
 
 class MyFragmentActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityFragmentBinding
+
+    private val viewModel: MyFragmentViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
