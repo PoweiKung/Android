@@ -1,9 +1,10 @@
 package com.example.deron.t8_Fragment
 
 import android.os.Bundle
-import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import com.example.deron.databinding.ActivityFragmentBinding
+import com.example.deron.t8_Fragment.FragmentManager.startFragment
+import androidx.activity.addCallback
 
 class MyFragmentActivity : AppCompatActivity() {
 
@@ -13,12 +14,14 @@ class MyFragmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         init()
+        backPressed()
+        this.startFragment(binding.container.id, MyFragmentOne.newInstance())
 
     }
 
     private fun init() {
         binding = ActivityFragmentBinding.inflate(layoutInflater)
-        setContent { binding.root }
+        setContentView(binding.root)
 
         // bar
         setSupportActionBar(binding.bar.toolbar)
@@ -29,4 +32,17 @@ class MyFragmentActivity : AppCompatActivity() {
         }
     }
 
+    fun goToFragmentTwo() {
+        this.startFragment(binding.container.id, MyFragmentTwo.newInstance())
+    }
+
+    private fun backPressed() {
+        onBackPressedDispatcher.addCallback(this) {
+            if (supportFragmentManager.backStackEntryCount <= 1) {
+                finish()
+            } else {
+                supportFragmentManager.popBackStack()
+            }
+        }
+    }
 }

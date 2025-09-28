@@ -14,6 +14,7 @@ import com.example.deron.t4_Hilt.HiltActivity
 import com.example.deron.t7_Retrofit.RetrofitActivity
 import com.example.deron.t5_Room.RoomActivity
 import com.example.deron.t6_Coroutine.CoroutineActivity
+import com.example.deron.t8_Fragment.MyFragmentActivity
 
 class MainActivity : AppCompatActivity(), MainAdapter.Listener {
 
@@ -25,7 +26,8 @@ class MainActivity : AppCompatActivity(), MainAdapter.Listener {
         MainListModel(name = "Hilt", HiltActivity::class.java),
         MainListModel(name = "Retrofit", RetrofitActivity::class.java),
         MainListModel(name = "Room", RoomActivity::class.java),
-        MainListModel(name = "Coroutine", CoroutineActivity::class.java)
+        MainListModel(name = "Coroutine", CoroutineActivity::class.java),
+        MainListModel(name = "Fragment", MyFragmentActivity::class.java)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
