@@ -16,6 +16,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".t11_compose.ComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.Deron.NoActionBar" />
+        <activity
             android:name=".t9_DialogFragment.DialogFragmentActivity"
             android:exported="false" />
         <activity
@@ -29,19 +34,19 @@
             android:exported="false" />
         <activity
             android:name=".t5_Room.RoomActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".t7_Retrofit.RetrofitActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".t3_HiltMVVM.HiltMVVMActivity"
             android:exported="false" />
         <activity
             android:name=".t2_MVVM.MVVMActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".t1_MVP.MVPActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

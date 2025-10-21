@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.deron.databinding.ActivityMainBinding
 import com.example.deron.model.MainListModel
+import com.example.deron.t11_compose.ComposeActivity
 import com.example.deron.t1_MVP.MVPActivity
 import com.example.deron.t2_MVVM.MVVMActivity
 import com.example.deron.t3_HiltMVVM.HiltMVVMActivity
@@ -30,7 +31,8 @@ class MainActivity : AppCompatActivity(), MainAdapter.Listener {
         MainListModel(name = "Room", RoomActivity::class.java),
         MainListModel(name = "Coroutine", CoroutineActivity::class.java),
         MainListModel(name = "Fragment", MyFragmentActivity::class.java),
-        MainListModel(name = "Dialog Fragment", DialogFragmentActivity::class.java)
+        MainListModel(name = "Dialog Fragment", DialogFragmentActivity::class.java),
+        MainListModel(name = "Compose UI", ComposeActivity::class.java)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
