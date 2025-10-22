@@ -1,14 +1,15 @@
-package com.example.deron.t2_MVVM
+package com.example.deron.t2_MVVM_LiveData
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.deron.databinding.ActivityMvvmBinding
 
-class MVVMActivity : AppCompatActivity() {
+class MVVMActivityLiveData : AppCompatActivity() {
 
     lateinit var binding: ActivityMvvmBinding
-    lateinit var viewModel: MVVMViewModel
+    lateinit var viewModel: MVVMVIewModelLiveData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,13 +34,14 @@ class MVVMActivity : AppCompatActivity() {
         // viewModel = MVVMViewModel()
 
         // 寫法二(工廠模式)
-        val repository = MVVMRepository()
-        val factory = MVVMFactory(repository)
+        val repository = MVVMRepositoryLiveData()
+        val factory = MVVMFactoryLiveData(repository)
         // viewModel = ViewModelProvider(this, factory).get(MVVMViewModel::class.java)
-        viewModel = ViewModelProvider(this, factory)[MVVMViewModel::class.java] // 也可以這樣寫
+        viewModel = ViewModelProvider(this, factory)[MVVMVIewModelLiveData::class.java] // 也可以這樣寫
 
         // 觀察 LiveData → 自動更新 UI
         viewModel.user.observe(this) { user ->
+            Log.v("test", "${user}_LiveData")
             binding.tv.text = user
         }
 

@@ -9,7 +9,8 @@ import com.example.deron.databinding.ActivityMainBinding
 import com.example.deron.model.MainListModel
 import com.example.deron.t11_compose.ComposeActivity
 import com.example.deron.t1_MVP.MVPActivity
-import com.example.deron.t2_MVVM.MVVMActivity
+import com.example.deron.t2_MVVM_Flow.MVVMActivityFLow
+import com.example.deron.t2_MVVM_LiveData.MVVMActivityLiveData
 import com.example.deron.t3_HiltMVVM.HiltMVVMActivity
 import com.example.deron.t4_Hilt.HiltActivity
 import com.example.deron.t7_Retrofit.RetrofitActivity
@@ -17,14 +18,14 @@ import com.example.deron.t5_Room.RoomActivity
 import com.example.deron.t6_Coroutine.CoroutineActivity
 import com.example.deron.t8_Fragment.MyFragmentActivity
 import com.example.deron.t9_DialogFragment.DialogFragmentActivity
-import com.example.deron.t9_DialogFragment.MyDialogFragment
 
 class MainActivity : AppCompatActivity(), MainAdapter.Listener {
 
     private lateinit var binding: ActivityMainBinding
     private val list = mutableListOf(
         MainListModel(name = "MVP", MVPActivity::class.java),
-        MainListModel(name = "MVVM", MVVMActivity::class.java),
+        MainListModel(name = "MVVM LiveData", MVVMActivityLiveData::class.java),
+        MainListModel(name = "MVVM Flow", MVVMActivityFLow::class.java),
         MainListModel(name = "Hilt MVVM", HiltMVVMActivity::class.java),
         MainListModel(name = "Hilt", HiltActivity::class.java),
         MainListModel(name = "Retrofit", RetrofitActivity::class.java),

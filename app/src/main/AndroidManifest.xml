@@ -42,7 +42,10 @@
             android:name=".t3_HiltMVVM.HiltMVVMActivity"
             android:exported="false" />
         <activity
-            android:name=".t2_MVVM.MVVMActivity"
+            android:name=".t2_MVVM_LiveData.MVVMActivityLiveData"
+            android:exported="false" />
+        <activity
+            android:name=".t2_MVVM_Flow.MVVMActivityFLow"
             android:exported="false" />
         <activity
             android:name=".t1_MVP.MVPActivity"
